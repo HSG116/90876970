@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>شرح الكيمياء الشامل</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#1c2433;--mut:#64708a;--line:#e8ecf4;--soft:#f6f8fc;--c:#3b82f6;--cs:#eaf2ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,"Segoe UI",sans-serif;line-height:1.9;font-size:16px}
+.hero{padding:34px 18px 22px;text-align:center;background:linear-gradient(180deg,#f3f7ff,#fff)}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,6vw,40px);font-weight:800}
+.hero p{margin:0 auto;max-width:560px;color:var(--mut)}
+.bar{max-width:420px;margin:16px auto 0;height:10px;border-radius:9px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3b82f6,#10b981);transition:width .5s}
+.bl{font-size:13px;color:var(--mut);margin-top:6px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:600;padding:6px 14px;border-radius:99px;cursor:pointer;transition:.2s}
+nav button.on{background:var(--c);border-color:var(--c);color:#fff;box-shadow:0 4px 14px -4px var(--c)}
+nav button.done::after{content:" ✓"}
+main{max-width:860px;margin:0 auto;padding:20px 14px 60px}
+.head{border-radius:22px;padding:22px;background:var(--cs);border:1px solid var(--line);margin-bottom:18px}
+.head h2{margin:0 0 6px;font-size:clamp(22px,5vw,30px);color:var(--c);font-weight:800}
+.head p{margin:0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:#fff;box-shadow:0 2px 10px -6px rgba(20,40,90,.18);transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.card h3{margin:0 0 4px;font-size:17px;color:var(--c)}
+.card p{margin:0;font-size:15px}
+h4{margin:26px 0 10px;font-size:19px;font-weight:800}
+.eq{direction:ltr;text-align:left;background:var(--soft);border:1px solid var(--line);border-right:4px solid var(--c);border-radius:12px;padding:8px 14px;margin:8px 0;font-size:15px;overflow-x:auto;white-space:nowrap}
+.eq small{display:block;direction:rtl;text-align:right;color:var(--mut);font-size:13px;white-space:normal}
+.key{background:#fffbea;border:1px solid #fde9a6;border-radius:16px;padding:14px 18px;margin-top:18px}
+.key b{color:#b45309}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:420px}
+th,td{padding:9px 12px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--cs);color:var(--c)}
+tr:last-child td{border:0}
+.q{border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}
+.q p{margin:0 0 8px;font-weight:600}
+.o{display:block;width:100%;text-align:right;font:inherit;font-size:15px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;margin:6px 0;cursor:pointer;transition:.15s}
+.o:hover{border-color:var(--c);background:var(--cs)}
+.o.ok{background:#e8f9f0;border-color:#10b981}
+.o.no{background:#fdecec;border-color:#ef4444}
+.ex{font-size:14px;color:var(--mut);margin-top:6px;display:none}
+.calc{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
+input{font:inherit;direction:ltr;width:110px;padding:6px 10px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.chip{font:inherit;font-size:13px;border:1px solid var(--c);color:var(--c);background:#fff;border-radius:99px;padding:3px 12px;cursor:pointer}
+.res{font-size:20px;font-weight:800;color:var(--c);margin-top:8px}
+.sc{text-align:center;font-weight:800;color:var(--c);margin-top:10px}
+.nx{display:flex;justify-content:space-between;margin-top:26px;gap:8px}
+.nx button{font:inherit;font-weight:600;border:0;background:var(--c);color:#fff;padding:9px 18px;border-radius:12px;cursor:pointer}
+.nx button:disabled{opacity:.3}
+button,input{color:#1c2433}
+.o{color:#1c2433!important;background:#fff;position:relative;overflow:hidden}
+.o.ok{background:#e3f8ec;color:#065f46!important}.o.no{background:#fde8e8;color:#991b1b!important;animation:shake .4s}
+.o.ok::before{content:"✓ ";font-weight:800}.o.no::before{content:"✗ ";font-weight:800}
+nav button.on,.nx button{color:#fff!important}
+td{direction:ltr}
+body{background:#fff;position:relative;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 12% 8%,color-mix(in srgb,var(--c) 14%,#fff),transparent 38%),radial-gradient(circle at 92% 30%,color-mix(in srgb,var(--c) 10%,#fff),transparent 40%),radial-gradient(circle at 30% 95%,#eefaf4,transparent 40%),linear-gradient(#fff,#fafcff);background-size:100% 100%;transition:background .6s}
+.bg i{position:absolute;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,transparent);border:2px solid color-mix(in srgb,var(--c) 22%,transparent);animation:fl 14s ease-in-out infinite}
+.bg i:nth-child(1){width:90px;height:90px;left:6%;top:18%}.bg i:nth-child(2){width:46px;height:46px;left:84%;top:12%;animation-delay:-4s;animation-duration:11s}.bg i:nth-child(3){width:140px;height:140px;left:76%;top:64%;animation-delay:-7s;animation-duration:17s}.bg i:nth-child(4){width:60px;height:60px;left:14%;top:72%;animation-delay:-2s}.bg i:nth-child(5){width:28px;height:28px;left:50%;top:40%;animation-delay:-9s;animation-duration:9s}
+@keyframes fl{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(24px,-34px) scale(1.08)}66%{transform:translate(-20px,22px) scale(.94)}}
+@keyframes up{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes sl{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+@keyframes gl{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes sh{from{background-position:200% 0}to{background-position:-200% 0}}
+.hero{background:linear-gradient(120deg,#eaf2ff,#f3ecff,#e6f8f5,#fff3e3,#eaf2ff);background-size:300% 300%;animation:gl 12s ease infinite;border-radius:0 0 34px 34px}
+.hero h1{background:linear-gradient(90deg,#2563eb,#9333ea,#e11d48);-webkit-background-clip:text;background-clip:text;color:transparent;animation:up .7s both}
+.hero p{animation:up .7s .15s both}
+.bar i{background:linear-gradient(90deg,#3b82f6,#10b981,#3b82f6);background-size:200% 100%;animation:sh 3s linear infinite}
+.head{animation:sl .5s both;background:linear-gradient(135deg,var(--cs),#fff);box-shadow:0 14px 34px -18px var(--c);position:relative;overflow:hidden}
+.head::after{content:"⚛";position:absolute;left:14px;top:-6px;font-size:84px;opacity:.1;color:var(--c);animation:sp 14s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+h4{animation:sl .5s both}
+.card{animation:up .55s both;border-top:4px solid var(--c);position:relative}
+.card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.12s}.card:nth-child(3){animation-delay:.19s}.card:nth-child(4){animation-delay:.26s}.card:nth-child(5){animation-delay:.33s}.card:nth-child(6){animation-delay:.4s}.card:nth-child(n+7){animation-delay:.47s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 34px -16px var(--c)}
+.eq,.q,.key,.calc,.tbl{animation:up .5s both}
+.eq:hover{transform:translateX(-4px);transition:.2s}
+nav button{transition:.25s}nav button:hover{transform:translateY(-2px);border-color:var(--c)}nav button.on{animation:pop .35s}
+.o:hover{transform:translateX(-4px)}.o:active{transform:scale(.98)}
+.sc{animation:pop .5s both;font-size:20px}
+.nx button{transition:.2s;box-shadow:0 8px 18px -8px var(--c)}.nx button:hover:not(:disabled){transform:translateY(-3px)}
+.res{animation:pop .3s both}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+@media(max-width:480px){body{font-size:15px}.head{padding:16px}}
+.grid{grid-template-columns:1fr;counter-reset:s}.card p{font-size:16px;line-height:2.05}.card h3{font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:6px}.card h3::before{counter-increment:s;content:counter(s);flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-size:14px}w,t{display:block;border-radius:12px;padding:8px 14px;margin:10px 0;font-size:15px}w{background:var(--cs);border-right:4px solid var(--c)}t{background:#fff8e6;border-right:4px solid #f59e0b}.card ol,.card ul{margin:6px 0;padding-right:22px}.card li{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i><i></i><i></i><i></i></div>
+<header class="hero">
+<h1>🧪 شرح الكيمياء الشامل</h1>
+<p>شرح مفصل وسهل: العناصر الكيميائية + قوانين الاتحاد الكيميائي والكتلة الذرية والنظائر</p>
+<div class="bar"><i id="pb"></i></div><div class="bl" id="pl"></div>
+</header>
+<nav id="nav"></nav>
+<main id="m"></main>
+<script>
+const L=[
+{n:"الكالسيوم",c:"#3b82f6",s:"#eaf2ff",t:"Ca — الفصل 1-2-1",d:"سنفهم من هو الكالسيوم، وكيف نحضّره، وماذا تفعل مركباته الأربعة المهمة.",
+p:[["ليش ندرس الكالسيوم؟","جسمك يحتاج الكالسيوم: يشكّل <b>2%</b> من كتلة جسمك، و<b>98%</b> منه موجود في العظام والأسنان (أي لو كتلتك 60 كغم ففيك حوالي 1.2 كغم كالسيوم). ولا نجده حرًّا في الطبيعة لأنه نشيط جدًا، بل داخل مركبات في الصخور: <b>CaCO₃</b> (الحجر الجيري)، <b>CaSO₄·2H₂O</b> (الجبس)، <b>CaCO₃·MgCO₃</b> (الدولوميت)، و<b>CaCl₂</b> (ذائب في ماء البحر)."],
+["من هو الكالسيوم في الجدول الدوري؟ (نشاط 5)","<ol><li><b>العدد الذري = 20</b> ⇐ في الذرة المتعادلة 20 إلكترونًا.</li><li><b>التوزيع الإلكتروني: 2، 8، 8، 2.</b></li><li>آخر مستوى فيه <b>إلكترونان</b> ⇐ <b>المجموعة الثانية</b> (الفلزات القلوية الترابية). وعدد المستويات 4 ⇐ <b>الدورة الرابعة</b>.</li><li>يشبهه كيميائيًا عناصر مجموعته: Be, Mg, Sr, Ba لأن لها نفس عدد إلكترونات التكافؤ.</li><li>يميل لفقدان إلكترونيه ليصل لتركيب الغاز النبيل: Ca → Ca²⁺ + 2e⁻ ⇐ <b>رقم التأكسد +2</b>.</li><li>الفلز يفقد إلكترونات وغيره يكسبها ⇐ المركبات <b>أيونية</b>، مثل CaCl₂.</li></ol>"],
+["خصائصه وتفاعله مع الماء (نشاط 6)","فلز صلب فضي لامع. عند وضع قطعة منه في الماء تلاحظ: <b>فقاعات غاز</b> (هيدروجين)، و<b>ارتفاع الحرارة</b> (تفاعل طارد)، و<b>عكارة</b>. ورقة عباد الشمس <b>الحمراء تصبح زرقاء</b> لأن الناتج هيدروكسيد الكالسيوم وهو <b>قاعدة</b>.<t>⚠️ احذر: لا تدع المحلول يلامس جلدك. وإن كانت العينة مؤكسدة (مغطاة بطبقة أكسيد) قد لا يظهر التفاعل بوضوح.</t><w>الدلائل: تصاعد غاز + ارتفاع حرارة + تغير لون ورقة العباد.</w>"],
+["كيف نحضّره؟ (نشاط 7)","نحضّره بالتحليل الكهربائي لـ <b>مصهور</b> CaCl₂ (نستخدم المصهور وليس المحلول لأن الماء يتفاعل مع الكالسيوم). في الخلية: <b>المهبط (القطب السالب)</b>: Ca²⁺ يكسب إلكترونين ⇐ <b>اختزال</b>. <b>المصعد (القطب الموجب)</b>: Cl⁻ يفقد إلكترونًا ⇐ <b>أكسدة</b> ويتصاعد غاز Cl₂. التفاعل الكلي: CaCl₂ → Ca + Cl₂، وهو تفاعل <b>أكسدة واختزال</b>.<t>للتذكر: الاختزال عند المهبط (كلمتان تبدآن بحرف الخاء... والأكسدة عند المصعد).</t>"],
+["كلوريد الكالسيوم CaCl₂","مادة تمتص الرطوبة بقوة، فنستخدمها <b>مجففًا</b> (تحمي الأشياء من الرطوبة)، وتدخل في صناعة <b>الإسمنت والبلاط</b>."],
+["أكسيد الكالسيوم CaO (الجير الحي أو الشيد) (نشاط 8)","يُحضَّر بتسخين الحجر الجيري عند حوالي 900°س: <b>CaCO₃ → CaO + CO₂</b> (تحلل حراري). عند إضافة الماء إليه تلاحظ سخونة شديدة وتكوّن عجينة: <b>CaO + H₂O → Ca(OH)₂</b> (الجير المطفأ). الناتج يحوّل عباد الشمس الأحمر للأزرق (قاعدي).<br>نرشّح المحلول فنحصل على <b>رائق الكلس</b>. إذا نفخت فيه بالمصاصة (زفيرك فيه CO₂) يصبح <b>عكرًا</b> أبيض: <b>Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O</b>. وهذه طريقة <b>الكشف عن CO₂</b>.<t>⚠️ لا تلمس الشيد: يحرق الجلد والعيون. ولهذا يطلي المزارعون جذوع الأشجار به (قاعدي يقتل الحشرات والميكروبات).</t>"],
+["كربونات الكالسيوم CaCO₃ (نشاط 9)","المكوّن الرئيس للحجر الجيري والرخام. <b>لا تذوب في الماء</b> (تبقى راسبًا عند الرج). وعند إضافة عصير الليمون (حمض) يحدث <b>فوران</b> لأن الحمض يتفاعل معها ويتصاعد CO₂: <b>CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂</b>. الاستنتاج: غير ذائبة في الماء وتتفاعل مع الحموض.<w>تطبيق: المطر الحمضي يضر البحيرات، فيضيف العلماء CaCO₃ لتعادل الحمض وتحمي الكائنات الحية.</w>"],
+["اللؤلؤ والمرجان","اللؤلؤة تتكوّن عندما يفرز المحار طبقات من <b>الأرجونايت (كربونات الكالسيوم)</b> حول حبة رمل دخيلة. والمرجان هياكل كائنات بحرية وتركيبه أيضًا كربونات الكالسيوم. وكلاهما يتأثر بالحموض."]],
+e:[["Ca + 2H₂O → Ca(OH)₂ + H₂","الكالسيوم مع الماء"],["CaCl₂ (مصهور) → Ca + Cl₂","التحليل الكهربائي"],["CaCO₃ → CaO + CO₂","تحلل حراري عند 900°س"],["CaO + H₂O → Ca(OH)₂","الجير المطفأ"],["Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O","تعكّر رائق الكلس"]],
+k:"رتّب المركبات: CaCl₂ (مجفف) ثم CaO (شيد) ثم Ca(OH)₂ (مطفأ) ثم CaCO₃ (حجر جيري). واحفظ المعادلات الخمس.",
+q:[["العدد الذري للكالسيوم؟",["12","20","18"],1,"التوزيع 2،8،8،2 = 20 إلكترونًا."],["الغاز المتصاعد عند تفاعل Ca مع الماء؟",["O₂","H₂","Cl₂"],1,"Ca + 2H₂O → Ca(OH)₂ + H₂"],["الاسم الشائع لـ CaO؟",["الجير المطفأ","الجير الحي (الشيد)","الجبس"],1,"الجير المطفأ هو Ca(OH)₂."],["ماذا يحدث لرائق الكلس عند النفخ فيه؟",["يتعكر","يصبح أزرق","لا يتغير"],0,"يتكون CaCO₃ الصلب غير الذائب."],["ماذا يحدث عند المهبط في تحليل CaCl₂؟",["أكسدة","اختزال","تعادل"],1,"Ca²⁺ يكسب إلكترونين."]]},
+{n:"الكبريت",c:"#d97706",s:"#fff6e5",t:"S — الفصل 1-2-2",d:"عنصر أصفر عجيب: يغيّر شكله بالحرارة، ويخرج منه المطر الحمضي والأسمدة.",
+p:[["أين نجد الكبريت؟","يدخل في بناء بعض <b>الحموض الأمينية</b> اللازمة لتكوين البروتينات في جسمك. يوجد حرًّا قرب <b>البراكين</b> وفي طبقات الصخور الملحية، وفي خامات مثل الجبس، وفي <b>H₂S</b> المرافق للنفط والغاز الطبيعي (مصدر مهم له)."],
+["هوية الكبريت (نشاط 10)","<ol><li><b>العدد الذري 16</b> ⇐ التوزيع <b>2، 8، 6</b>.</li><li>6 إلكترونات تكافؤ ⇐ <b>المجموعة 16</b>، و3 مستويات ⇐ <b>الدورة 3</b>.</li><li>هو <b>لا فلز</b>: يميل لكسب إلكترونين ليكمل 8 ⇐ S²⁻ ⇐ رقم تأكسد −2.</li><li>مع الفلزات يكوّن مركبات <b>أيونية</b> (ZnS)، ومع اللافلزات مركبات <b>تساهمية</b> (SO₂).</li></ol>"],
+["الخصائص الفيزيائية (نشاط 11)","صلب أصفر <b>هش</b> (ينكسر عند الطرق ولا يُسحب)، <b>غير موصل</b> للكهرباء (المصباح لا يضيء)، وغير لامع. عند تسخينه: ينصهر إلى سائل أصفر، ثم يغمق لونه ويصبح <b>لزجًا</b>، ثم يغلي. يحدث ذلك لأن الحلقات تتغير في ترتيبها عند ارتفاع الحرارة."],
+["التركيب والتآصل","الكبريت الطبيعي جزيء <b>S₈</b>: 8 ذرات في حلقة. تترتب الحلقات بطرق مختلفة فنحصل على أشكال مختلفة لنفس العنصر، وهذه ظاهرة <b>التآصل</b>:<ul><li><b>معيني</b>: ترتيب هندسي منتظم (متبلور).</li><li><b>إبري (منشوري)</b>: ترتيب منتظم بشكل آخر.</li><li><b>بلاستيكي (مطاطي)</b>: سلاسل طويلة غير منتظمة.</li></ul><w>التآصل: وجود العنصر بأكثر من شكل بخصائص فيزيائية مختلفة، وخصائصه الكيميائية نفسها.</w>"],
+["كيف نحضّر الشكلين؟ (نشاط 12)","<b>المنشوري</b>: سخّن الكبريت حتى يصبح لونه قريبًا من البرتقالي، صبّه على ورق ترشيح واتركه دقيقتين ليتجمد فتظهر بلورات إبرية. وإذا تركته ثلاثة أيام يتغير شكله ويتحول بالتدريج للشكل المعيني الأكثر استقرارًا.<br><b>المطاطي</b>: سخّنه حتى الغليان ويصبح داكنًا، ثم صبّه في ماء بارد ⇐ تتجمد حبال مرنة كالمطاط."],
+["الخصائص الكيميائية (نشاط 13)","<b>مع الأكسجين:</b> S + O₂ → SO₂. الغاز يحمّر ورق عباد الشمس الأزرق المبلل ⇐ <b>حمضي</b>. وعند اختلاطه بماء المطر يتكوّن <b>المطر الحمضي</b>.<br><b>مع الخارصين:</b> Zn + S → ZnS (كبريتيد الخارصين). نوع التفاعل <b>اتحاد مباشر</b> و<b>أكسدة واختزال</b> (Zn يفقد إلكترونين وS يكسبهما). ودلالة حدوثه: تكوّن مادة جديدة مع <b>حرارة وتوهج</b>."],
+["استخداماته","صناعة <b>حمض الكبريتيك</b> (زيادة استهلاكه دليل على التقدم الصناعي)، علاج بعض الأمراض الجلدية، صناعة <b>المبيدات الفطرية والحشرية</b>، ومن مصادره الغذائية: البيض واللحوم والثوم والبصل."]],
+e:[["S + O₂ → SO₂","غاز حمضي، سبب المطر الحمضي"],["Zn + S → ZnS","اتحاد وأكسدة واختزال"]],
+k:"احفظ: S₈ حلقي، التآصل ثلاثة أشكال، SO₂ حمضي، والكبريت لا فلز لا يوصل الكهرباء.",
+q:[["الصيغة الجزيئية للكبريت الطبيعي؟",["S","S₂","S₈"],2,"8 ذرات في حلقة."],["الكبريت المطاطي يتكوّن عند صب المصهور المغلي في…",["ماء بارد","هواء","ورق ترشيح"],0,"التبريد المفاجئ يعطي سلاسل."],["ظاهرة وجود العنصر بأكثر من شكل؟",["النظائر","التآصل","التسامي"],1,"التآصل."],["غاز SO₂ يحوّل ورق عباد الشمس الأزرق إلى…",["أحمر","أخضر","لا يتغير"],0,"لأنه حمضي."],["ما نوع التفاعل Zn + S → ZnS؟",["تعادل","اتحاد وأكسدة واختزال","تحلل"],1,"Zn يفقد وS يكسب."]]},
+{n:"السيليكون",c:"#0d9488",s:"#e6f8f5",t:"Si — الفصل 1-2-3",d:"سبب وجود هاتفك وحاسوبك: شبه فلز بخصائص مميزة.",
+p:[["أين نجده؟","ثاني أكثر العناصر وفرة في القشرة الأرضية بعد الأكسجين (حوالي <b>28%</b> من كتلتها). لا يوجد حرًّا بل على صورة <b>سيليكا SiO₂</b> (الرمل والكوارتز) وسيليكات، وتدخل في الإسمنت والبورسلان والزجاج."],
+["هوية السيليكون (نشاط 14)","<ol><li><b>Z = 14</b> ⇐ التوزيع <b>2، 8، 4</b>.</li><li>4 إلكترونات تكافؤ ⇐ <b>المجموعة 14</b>، الدورة 3.</li><li>ألوان الجدول الدوري تفصل بين الفلزات واللافلزات وأشباه الفلزات، والسيليكون <b>شبه فلز</b> يقع على الحدّ الفاصل بينهما.</li></ol><t>هل نعرف أشباه الفلزات من توزيعها الإلكتروني؟ <b>لا</b>. فالكربون (لافلز) والسيليكون (شبه فلز) والقصدير (فلز) كلها فيها 4 إلكترونات تكافؤ. التصنيف يعتمد على <b>الخصائص</b>.</t>"],
+["خصائصه (نشاط 15)","صلب رمادي لامع. الكثافة <b>2.329 غم/سم³</b>، ينصهر عند <b>1414°س</b>، ويغلي عند <b>3265°س</b>.<br>المواد حسب التوصيل ثلاثة: <b>موصلات</b> (فلزات)، <b>عوازل</b> (لافلزات)، <b>أشباه موصلات</b>. السيليكون منها لأنه يوصل الكهرباء <b>بدرجة ضعيفة</b> (المصباح يضيء ضعيفًا في دارة). ومن العوامل المؤثرة في مقاومته: <b>درجة الحرارة</b> ووجود <b>الشوائب</b>."],
+["استخداماته","الدايودات والترانزستورات والرقاقات الحاسوبية والدارات المتكاملة. الترانزستور يعمل كمفتاح: <b>يصل الدوائر ويفصلها</b> بفضل خاصية شبه الموصل. ويسمى <b>عنصر الجمال</b> لدوره في العناية بالجسم."],
+["استخلاصه","نسخّن الرمل SiO₂ مع الكربون في أفران كهربائية حرارية على مرحلتين. نوع التفاعلين <b>أكسدة واختزال</b>: SiO₂ يُختزل إلى Si، والكربون يتأكسد إلى CO ثم CO₂."]],
+e:[["SiO₂ + 2C → Si + 2CO","الخطوة الأولى (بالحرارة)"],["SiO₂ + 2CO → Si + 2CO₂","الخطوة الثانية (بالحرارة)"]],
+k:"Si: Z=14، شبه فلز، شبه موصل، يستخلص من الرمل بالكربون، ولا نستدل على أشباه الفلزات من توزيعها الإلكتروني.",
+q:[["عدد إلكترونات التكافؤ في Si؟",["2","4","6"],1,"2،8،4."],["السيليكون يُصنّف…",["فلز","لافلز","شبه فلز"],2,"شبه موصل."],["مصدر السيليكون في الصناعة؟",["SiO₂ (الرمل)","CaCO₃","NaCl"],0,"يُختزل بالكربون."],["السيليكون مهم لأنه…",["عازل تام","شبه موصل يصل ويفصل الدوائر","فلز موصل جيد"],1,"أساس الترانزستور."]]},
+{n:"قوانين الاتحاد الكيميائي",c:"#4f46e5",s:"#eef0ff",t:"الفصل 2-1",d:"قانونان يحكمان كل تفاعل كيميائي، وسنحل أسئلتهما معًا.",
+p:[["القانون الأول: حفظ الكتلة (نشاط 1)","نخلط KI مع Pb(NO₃)₂ في دورق مغلق ونزن قبل وبعد. تظهر دلائل التفاعل: <b>راسب أصفر</b> هو PbI₂. لكن قراءة الميزان <b>لا تتغير</b>.<w><b>النص:</b> كتلة المواد المتفاعلة = كتلة المواد الناتجة. أي أن المادة لا تفنى ولا تُستحدث في التفاعل الكيميائي، بل تتغير صورتها فقط.</w>"],
+["لو احترق الخشب وبقي رماد قليل؟","وزن الخشب 1 كغم والرماد بضع غرامات. هل خالف القانون؟ <b>لا</b>. جزء كبير من الخشب تحول إلى غازات (CO₂ وبخار ماء) تصاعدت في الهواء. لو جمعناها مع الرماد لكانت الكتلة الكلية = كتلة الخشب + كتلة الأكسجين المتفاعل."],
+["مسألة محلولة","تفاعل 6.4 غم O₂ مع كمية من H₂ وأنتج 7.2 غم ماء. كتلة H₂؟<w>كتلة المتفاعلات = كتلة النواتج<br>6.4 + س = 7.2 ⇐ <b>س = 0.8 غم</b></w>"],
+["القانون الثاني: النسب الثابتة","يمكن تحضير الأمونيا NH₃ من طرق مختلفة (كتفاعل NH₄Cl مع Ca(OH)₂ أو غيره). وفي كل مرة نجد نسبة كتلة النيتروجين إلى الهيدروجين <b>نفسها</b>.<w><b>النص:</b> مهما اختلفت طرق تحضير المركب الواحد أو مصدره، تبقى نسب كتل العناصر المكوّنة له ثابتة.</w>"],
+["مثال السكروز C₁₂H₂₂O₁₁","في سكر القصب C = 42%، وفي الشمندر H = 6.5%. ما نسبة O في سكر البطاطا؟ بما أن النسب ثابتة فهي نفسها في كل العينات:<w>O% = 100 − 42 − 6.5 = <b>51.5%</b></w>"]],
+e:[["2KI + Pb(NO₃)₂ → PbI₂↓ + 2KNO₃","كتلة قبل التفاعل = كتلة بعده"]],
+k:"احفظ نص القانونين بالحرف. وفي مسائل حفظ الكتلة اجمع المتفاعلات = اجمع النواتج.",
+q:[["الكتلة قبل التفاعل وبعده في وعاء مغلق؟",["تزداد","تقل","تبقى ثابتة"],2,"حفظ الكتلة."],["نسبة O في السكروز إذا C 42% وH 6.5%؟",["51.5%","48.5%","42%"],0,"100 − 48.5."],["أي قانون يقول إن نسب العناصر في المركب لا تتغير؟",["حفظ الكتلة","النسب الثابتة","دالتون"],1,"قانون النسب الثابتة."],["6.4غم O₂ + س غم H₂ → 7.2غم H₂O، قيمة س؟",["0.8","1.6","13.6"],0,"7.2 − 6.4."]]},
+{n:"الكتلة الذرية",c:"#9333ea",s:"#f5ecff",t:"الفصل 2-2",d:"لماذا نستخدم وحدة u؟ وكيف نقارن كتل الذرات بسهولة؟",
+p:[["المشكلة","كتلة ذرة الهيدروجين تقريبًا <b>1.66 × 10⁻²⁴ غم</b>، رقم صغير جدًا يصعب استخدامه. فاقترح العلماء <b>مقياسًا نسبيًا</b>."],["الفكرة","اختاروا ذرة الكربون-12 مرجعًا وقالوا إن كتلتها <b>12 وحدة</b>. كل وحدة اسمها <b>وحدة الكتل الذرية (u)</b>:<w>1u = 1/12 من كتلة ذرة C-12 = 1.660538921 × 10⁻²⁴ غم</w>"],["أمثلة للفهم","<ul><li><b>H = 1u</b> = 1/12 من كتلة الكربون.</li><li><b>Mg = 24u</b> = ذرتان من الكربون (24 ÷ 12 = 2).</li></ul>"],["مسائل الكتاب","<b>أ)</b> كتلة At = 17.5 ذرة كربون ⇐ 17.5 × 12 = <b>210u</b>.<br><b>ب)</b> الفسفور 31u ⇐ كتلته بالنسبة للكربون = 31 ÷ 12 ≈ <b>2.58</b> ذرة كربون."]],
+e:[["كتلة الذرة (u) = عدد أمثال الكربون × 12","وبالعكس: عدد الأمثال = u ÷ 12"]],
+k:"u هي 1/12 من كتلة C-12. ولا تنسَ ضرب أو قسمة العدد 12.",w:"u",
+q:[["كتلة C-12 بوحدة u؟",["1","12","6"],1,"تعريف الوحدة."],["ذرة Mg كتلتها 24u تساوي… ذرة كربون",["مثلين","نصف","ثلاثة أمثال"],0,"24 ÷ 12 = 2."],["كتلة At = 17.5 ذرة كربون، بالـ u؟",["210","17.5","1.5"],0,"17.5 × 12."]]},
+{n:"النظائر",c:"#e11d48",s:"#ffedf1",t:"الفصل 2-3",d:"لماذا للكلور كتلة ذرية 35.45 وليس عددًا صحيحًا؟ هذا الدرس يجيبك.",
+p:[["اكتشاف النظائر","كان دالتون يظن أن ذرات العنصر الواحد متماثلة تمامًا. لكن <b>مطياف الكتلة</b> أثبت أن ذرات العنصر الواحد قد تختلف في الكتلة، وهذا <b>يتعارض مع نظرية دالتون</b>."],["كيف يعمل مطياف الكتلة؟","<ol><li>تتحول الذرات إلى <b>أيونات موجبة</b>.</li><li>تُسرَّع وتدخل مجالًا مغناطيسيًا.</li><li>ينحرف كل أيون بحسب <b>كتلته/شحنته</b> (الأخف ينحرف أكثر).</li><li>يسجل الكاشف مواضع الأيونات وكثرتها ⇐ نعرف النظائر ونسبها.</li></ol>مثال: النيون له 3 نظائر في الطبيعة."],["ما النظائر؟","<w>ذرات العنصر نفسه لها <b>العدد الذري نفسه</b> (نفس البروتونات) وتختلف في <b>العدد الكتلي</b> (نفس البروتونات وعدد مختلف من النيوترونات).</w>مثال الكربون: <b>C-12</b>: 6p و6n، <b>C-13</b>: 6p و7n، <b>C-14</b>: 6p و8n. تتشابه في عدد البروتونات والإلكترونات (ولذلك خصائصها الكيميائية متشابهة) وتختلف في عدد النيوترونات (ولذلك تختلف الكتلة)."],["كتابة هوية الذرة","نكتب العدد الكتلي أعلى يسار الرمز والعدد الذري أسفله: A فوق وZ تحت. <b>A = Z + عدد النيوترونات</b>. مثال: ¹⁴₆C."],["فرق مهم","<b>الكتلة الذرية للنظير</b> قيمة دقيقة بالكسور (مثل 34.97u). أما <b>العدد الكتلي</b> فعدد صحيح (35) = بروتونات + نيوترونات."],["لماذا الكتلة الذرية في الجدول كسر؟","لأن العنصر الطبيعي خليط من نظائر بنسب مختلفة، فنأخذ <b>المتوسط المرجّح</b>:<w>المتوسط = (كتلة النظير1 × نسبته%) + (كتلة النظير2 × نسبته%) + … ، ثم نقسم على 100</w>"],["مثال النحاس (محلول)","Cu-63 كتلته 62.93u ونسبته 69.15%، وCu-65 كتلته 64.93u ونسبته 30.85%.<w>(62.93 × 69.15 ÷ 100) + (64.93 × 30.85 ÷ 100) = 43.51 + 20.03 = <b>63.5u</b>، وهي قريبة من قيمة الجدول الدوري.</w>"],["مثال الكلور","Cl-35 (34.97u، 75.77%) وCl-37 (36.97u، 24.23%):<w>26.50 + 8.96 = <b>35.45u</b>. وهي أقرب إلى 35 لأن النظير الأخف أكثر وفرة.</w>"]],
+e:[["المتوسط = Σ (كتلة النظير × نسبته%) ÷ 100","القانون الأساسي"],["A = Z + n","العدد الكتلي = بروتونات + نيوترونات"]],
+k:"النظائر: Z ثابت وA مختلف. وانتبه: النسب تُقسم على 100.",w:"iso",
+q:[["النظائر تتفق في…",["العدد الكتلي","عدد النيوترونات","عدد البروتونات"],2,"Z ثابت."],["عدد نيوترونات C-14؟",["6","8","14"],1,"14 − 6 = 8."],["سبب الكسور العشرية في الكتل الذرية؟",["النظائر","الأيونات","الإلكترونات"],0,"متوسط مرجّح."],["أي جهاز يكشف النظائر؟",["مطياف الكتلة","المجهر","الأميتر"],0,"يفصل حسب كتلة/شحنة."],["عدد البروتونات في Cl-37 (Z=17)؟",["17","20","37"],0,"Z هو عدد البروتونات."]]}
+];
+const m=document.getElementById("m"),nav=document.getElementById("nav");let cur=0;const done=new Set();
+L.forEach((l,i)=>{const b=document.createElement("button");b.textContent=l.n;b.onclick=()=>go(i);nav.appendChild(b)});
+function prog(){document.getElementById("pb").style.width=done.size/L.length*100+"%";document.getElementById("pl").textContent=`أنجزت ${done.size} من ${L.length} دروس (أجب عن أسئلة كل درس)`;[...nav.children].forEach((b,i)=>{b.className=(i==cur?"on ":"")+(done.has(i)?"done":"")})}
+const ISO={Cu:[[62.93,69.15],[64.93,30.85]],Cl:[[34.97,75.77],[36.97,24.23]],O:[[16,99.762],[17,.038],[18,.2]],Pb:[[204,1.4],[206,24.1],[207,22.1],[208,52.4]]};
+function go(i){cur=i;const l=L[i];document.documentElement.style.setProperty("--c",l.c);document.documentElement.style.setProperty("--cs",l.s);
+let h=`<div class="head"><h2>${l.n}</h2><p><b>${l.t}</b> — ${l.d}</p></div><h4>📖 الشرح الكامل خطوة بخطوة</h4><div class="grid">`+l.p.map(x=>`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")+`</div>`;
+if(l.e)h+=`<h4>⚗️ المعادلات والعلاقات</h4>`+l.e.map(x=>`<div class="eq">${x[0]}<small>${x[1]}</small></div>`).join("");
+if(l.w=="iso")h+=`<h4>🧮 حاسبة متوسط الكتلة الذرية</h4><div class="calc"><div class="row">`+Object.keys(ISO).map(k=>`<button class="chip" onclick="pre('${k}')">${k}</button>`).join("")+`</div><div id="iso"></div><div class="res" id="ir"></div></div><h4>جدول بعض النظائر</h4><div class="tbl"><table><tr><th>العنصر</th><th>النظير</th><th>الكتلة</th><th>النسبة</th></tr><tr><td>Cl</td><td>35 / 37</td><td>34.97 / 36.97</td><td>75.77% / 24.23%</td></tr><tr><td>O</td><td>16 / 17 / 18</td><td>16 / 17 / 18</td><td>99.762% / 0.038% / 0.2%</td></tr></table></div>`;
+if(l.w=="u")h+=`<h4>🧮 حوّل إلى وحدة u</h4><div class="calc"><div class="row">كتلة الذرة = <input id="uc" type="number" step="any" value="17.5" oninput="uu()"> × كتلة ذرة كربون</div><div class="res" id="ur"></div></div>`;
+h+=`<div class="key"><b>⭐ للامتحان:</b> ${l.k.replace(/\b([ZA])\b/g,'<bdi dir="ltr">$1</bdi>')}</div><h4>📝 اختبر نفسك</h4><div id="qz"></div><div class="sc" id="sc"></div><div class="nx"><button ${i?"":"disabled"} onclick="go(${i-1})">→ السابق</button><button ${i<L.length-1?"":"disabled"} onclick="go(${i+1})">← التالي</button></div>`;
+m.innerHTML=h;let s=0,n=0;const z=document.getElementById("qz");
+l.q.forEach(q=>{const d=document.createElement("div");d.className="q";d.innerHTML=`<p>${q[0]}</p>`+q[1].map((o,j)=>`<button class="o" data-j="${j}">${o}</button>`).join("")+`<div class="ex">${q[3]}</div>`;
+d.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(d.dataset.d)return;d.dataset.d=1;const j=+b.dataset.j;n++;if(j==q[2]){s++;b.classList.add("ok")}else{b.classList.add("no");d.querySelectorAll(".o")[q[2]].classList.add("ok")}d.querySelector(".ex").style.display="block";if(n==l.q.length){document.getElementById("sc").textContent=`نتيجتك ${s} / ${n} ${s==n?"🎉 ممتاز":"💪 راجع الملخص"}`;done.add(i);prog()}});z.appendChild(d)});
+if(l.w=="iso")pre("Cu");if(l.w=="u")uu();prog();scrollTo({top:0,behavior:"smooth"})}
+function pre(k){document.getElementById("iso").innerHTML=ISO[k].map((r,i)=>`<div class="row">نظير ${i+1}: كتلة <input type="number" step="any" value="${r[0]}" oninput="ic()"> نسبة % <input type="number" step="any" value="${r[1]}" oninput="ic()"></div>`).join("");ic()}
+function ic(){const v=[...document.querySelectorAll("#iso input")].map(x=>+x.value);let t=0;for(let i=0;i<v.length;i+=2)t+=v[i]*v[i+1]/100;document.getElementById("ir").textContent="المتوسط = "+t.toFixed(2)+" u"}
+function uu(){document.getElementById("ur").textContent=(document.getElementById("uc").value*12).toFixed(2)+" u"}
+go(0);
+</script>
+</body>
+</html>
